@@ -1,9 +1,9 @@
 import React from "react";
 
-const Comments = ({comments} : any) =>(
+const Comments = ({ comments }: any) => (
     <ul>
         {
-            comments.map((item, id)=>(
+            comments.map((item, id) => (
                 <li key={id}>
                     {item}
                 </li>
