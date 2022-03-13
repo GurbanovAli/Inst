@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { StyledAddBtn, StyledInput, StyledImage } from "./style";
+
 const NewPost = (props: any) => {
     const { post, setPost } = props;
     const [selectedImg, setSelectedImg] = useState(null);
@@ -23,11 +25,12 @@ const NewPost = (props: any) => {
         <div>
             {selectedImg && (
                 <div>
-                    <img alt="" width="250px" src={URL.createObjectURL(selectedImg)} />
-                    <button onClick={selectedImg && clearState}>Add</button>
+                    <StyledImage  alt="" width="250px" src={URL.createObjectURL(selectedImg)} />
+                    <br/>
+                    <StyledAddBtn onClick={selectedImg && clearState}>Add</StyledAddBtn >
                 </div>
             )}
-            <input
+            <StyledInput
                 type="file"
                 name="newImage"
                 onChange={(e: any) => {

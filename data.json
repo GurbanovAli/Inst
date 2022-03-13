@@ -1,18 +1,13 @@
-[{
-        "login": "admin",
-        "password": "admin"
-    },
-    {
-        "login": "user",
-        "password": "user",
-        "post": [{
-                "img": "https://www.freecodecamp.org/news/content/images/2020/04/jsposter.jpg",
-                "comment": "nice image"
-            },
-            {
-                "img": "https://www.freecodecamp.org/news/content/images/2020/04/jsposter.jpg",
-                "comment": "nice image"
-            }
-        ]
-    }
-]
+{
+    "login": "user",
+    "password": "user",
+    "post": [{
+            "img": "https://www.freecodecamp.org/news/content/images/2020/04/jsposter.jpg",
+            "comment": "nice image"
+        },
+        {
+            "img": "https://www.freecodecamp.org/news/content/images/2020/04/jsposter.jpg",
+            "comment": "nice image"
+        }
+    ]
+}

@@ -1,21 +1,24 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import Comments from './comments'
 import CommentForm from "./comment_form";
+import { StyledDiv, StyledImage } from "./style";
 
-const Post = (props:any) => {
+const Post = (props: any) => {
     const post = props.props;
 
     const [comments, setComments] = useState([post.comment]);
 
     return (
-        <div>
+        <StyledDiv>
             <div>
-                <img width="400" height="300" src={post.img}/>
+                <StyledImage src={post.img} />
             </div>
-            <CommentForm copmments={comments} setComments={setComments}/>
-            <Comments comments={comments} />
-        </div>
+            <>
+                <CommentForm comments={comments} setComments={setComments} />
+                <Comments comments={comments} />
+            </>
+        </StyledDiv>
     )
 }
 
