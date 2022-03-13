@@ -51,22 +51,22 @@ export const List = styled.li`
 `
 
 export const StyledForm = styled.form`
-  margin: 0.5em 2.4em;
+    margin: 0.5em 2.4em;
 `
 export const StyledCommentInput = styled.input`
-  margin: 1px;
-  padding: 6px 20px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+    margin: 1px;
+    padding: 6px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 `
 
 export const StyledInputBtn = styled.input`
-  background-color: #4CAF50;
-  color: white;
-  padding: 7px 6px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    padding: 7px 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 `

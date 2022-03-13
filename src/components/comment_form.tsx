@@ -1,24 +1,27 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { StyledForm, StyledCommentInput, StyledInputBtn } from "./style";
 
-const CommentForm = (props) => {
-    const {comments, setComments} = props;
-    console.log(comments);
+interface IProps {
+    comments: string[];
+    setComments: (item: string[]) => void;
+}
 
-    const handleChange = (event: any): any => {
-        const { value } = event.target as any;
+const CommentForm: React.FC<IProps> = (props: IProps) => {
+    const { comments, setComments } = props;
+    const reference = useRef<any>();
 
-        setComments([ ...comments, value ])
-      };
+    const handleChange = (event) => {
+        const value = reference.current.value;
 
-      const handleSubmit = (event) => {
+        setComments([...comments, value]);
+
         event.preventDefault();
-      };
+    };
 
     return (
-        <StyledForm onSubmit={handleSubmit}>
-            <StyledCommentInput type="text" placeholder="your comment.." onChange={handleChange}/>
+        <StyledForm onSubmit={handleChange}>
+            <StyledCommentInput ref={reference} type="text" placeholder="your comment.." />
             <StyledInputBtn type="submit" value="add comment" />
         </StyledForm>
     )

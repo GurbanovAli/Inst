@@ -4,15 +4,18 @@ import Comments from './comments'
 import CommentForm from "./comment_form";
 import { StyledDiv, StyledImage } from "./style";
 
-const Post = (props: any) => {
-    const post = props.props;
+interface IProps {
+    comment: string;
+    img: string;
+}
 
-    const [comments, setComments] = useState([post.comment]);
+const Post: React.FC<IProps | any> = ({ props }: IProps | any) => {
+    const [comments, setComments] = useState<string[]>([props.comment]);
 
     return (
         <StyledDiv>
             <div>
-                <StyledImage src={post.img} />
+                <StyledImage src={props.img} />
             </div>
             <>
                 <CommentForm comments={comments} setComments={setComments} />

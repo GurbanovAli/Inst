@@ -2,7 +2,11 @@ import React from "react";
 
 import { List } from './style'
 
-const Comments = ({ comments }: any) => (
+interface IComments {
+    comments: string[];
+}
+
+const Comments: React.FC<IComments> = ({ comments }: IComments) => (
     <ul>
         {
             comments.map((item, id) => (

@@ -4,9 +4,9 @@ import NewPost from "./new_post";
 import Post from './post'
 import styled from 'styled-components'
 
-const Main = (props: any) => {
-    const [post, setPost] = useState(props.data.post);
-    const [toggle, setToggle] = useState(false);
+const Main: React.FC<any> = (props) => {
+    const [post, setPost] = useState<string[]>(props.data.post);
+    const [toggle, setToggle] = useState<boolean>(false);
 
     return (
         <div>
@@ -16,6 +16,7 @@ const Main = (props: any) => {
             {toggle && <NewPost post={post} setPost={setPost} />}
             {
                 post.map((item, id) => (
+
                     <Post key={id} props={item} />
                 ))
             }

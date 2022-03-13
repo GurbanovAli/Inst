@@ -2,9 +2,14 @@ import React, { useState } from "react";
 
 import { StyledAddBtn, StyledInput, StyledImage } from "./style";
 
-const NewPost = (props: any) => {
+interface IProps {
+    post: string[] | any;
+    setPost: (item: string[]) => void;
+}
+
+const NewPost: React.FC<IProps> = (props: IProps) => {
     const { post, setPost } = props;
-    const [selectedImg, setSelectedImg] = useState(null);
+    const [selectedImg, setSelectedImg] = useState<string | any>(null);
 
     const setNewPost = () => {
         const getImg = selectedImg && URL.createObjectURL(selectedImg);
@@ -25,8 +30,8 @@ const NewPost = (props: any) => {
         <div>
             {selectedImg && (
                 <div>
-                    <StyledImage  alt="" width="250px" src={URL.createObjectURL(selectedImg)} />
-                    <br/>
+                    <StyledImage alt="" width="250px" src={URL.createObjectURL(selectedImg)} />
+                    <br />
                     <StyledAddBtn onClick={selectedImg && clearState}>Add</StyledAddBtn >
                 </div>
             )}

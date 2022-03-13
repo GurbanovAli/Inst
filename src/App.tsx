@@ -6,19 +6,19 @@ import data from '../data.json'
 import styled from 'styled-components'
 
 export const App = () => {
-    const [auth, setAuth] = useState(false);
+    const [auth, setAuth] = useState<boolean>(false);
 
-    return true?
-    (
-        <StyledContainer>
-            <Main data={data} />
-        </StyledContainer>
-    ):
-    (
-        <>
-            <Auth data={data} setAuth={setAuth}/>
-        </>
-    )
+    return auth ?
+        (
+            <StyledContainer>
+                <Main data={data} />
+            </StyledContainer>
+        ) :
+        (
+            <>
+                <Auth data={data} setAuth={setAuth} />
+            </>
+        )
 };
 
 const StyledContainer = styled.div`
